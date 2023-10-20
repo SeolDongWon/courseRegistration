@@ -1,5 +1,6 @@
 package academicMain;
 
+import controller.LessonRegisterManager;
 import controller.StudentRegisterManager;
 import controller.SubjectRegisterManager;
 import view.LESSON_CHOICE;
@@ -117,6 +118,7 @@ public class CourseRegistMain {
 	}
 
 	private static void lessonMenu() { // 과목 메뉴
+		LessonRegisterManager lessonManager = new LessonRegisterManager();
 		int choice = 0;
 		// 객체 // 과목 CRUD 컨트롤러
 		MenuViewer.lessonMenuView();
@@ -125,19 +127,19 @@ public class CourseRegistMain {
 		switch (choice) {
 		case LESSON_CHOICE.LIST: // LESSON_CHOICE의 상수 정수 1
 			System.out.println("");
-			// 과목매니저.목록 // 과목 목록
+			lessonManager.lessonList(); // 과목 목록
 			break;
 		case LESSON_CHOICE.INSERT: // LESSON_CHOICE의 상수 정수 2
 			System.out.println("");
-			// 과목매니저.등록 // 과목 등록
+			lessonManager.lessonRegistr(); // 과목 등록
 			break;
 		case LESSON_CHOICE.UPDATE: // LESSON_CHOICE의 상수 정수 3
 			System.out.println("");
-			// 과목매니저.수정 // 과목 수정
+			lessonManager.lessonUpdate(); // 과목 수정
 			break;
 		case LESSON_CHOICE.DELETE: // LESSON_CHOICE의 상수 정수 4
 			System.out.println("");
-			// 과목매니저.삭제 // 과목 삭제
+			lessonManager.lessonDelete(); // 과목 삭제
 			break;
 		case LESSON_CHOICE.MAIN: // LESSON_CHOICE의 상수 정수 5
 			return; // 나가기

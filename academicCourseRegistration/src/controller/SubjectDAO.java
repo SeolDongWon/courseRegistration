@@ -59,7 +59,7 @@ public class SubjectDAO { // Subject Data Access Object
 	public void setSubjectRegiste(SubjectVO sbVO) {
 		Connection con = DBUtil.getConnection();
 		PreparedStatement pstmt = null;
-		String sql = "insert into subject(no, s_num, s_name) values (subject_no_seq.nextval, ?, ?)";
+		String sql = "insert into subject values (subject_no_seq.nextval, ?, ?)";
 
 		try {
 			pstmt = con.prepareStatement(sql);

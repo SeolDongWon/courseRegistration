@@ -59,7 +59,7 @@ public class LessonVO {
 
 	@Override
 	public String toString() {
-		return "LessonVO [no=" + no + ", l_abbre=" + l_abbre + ", l_name=" + l_name + "]";
+		return no + "\t" + l_abbre + "\t" + l_name;
 	}
 
 }
