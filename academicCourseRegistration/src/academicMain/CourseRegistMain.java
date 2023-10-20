@@ -1,4 +1,6 @@
 package academicMain;
+
+import controller.StudentRegisterManager;
 import controller.SubjectRegisterManager;
 import view.LESSON_CHOICE;
 import view.MENU_CHOICE;
@@ -54,8 +56,8 @@ public class CourseRegistMain {
 	}
 
 	private static void subjectMenu() { // 학과메뉴
-		int choice = 0;
 		SubjectRegisterManager subjectManager = new SubjectRegisterManager(); // 학과 CRUD 컨트롤러
+		int choice = 0;
 		MenuViewer.subjectMenuView(); // 학과 메뉴 출력
 		choice = MenuViewer.choice.nextInt(); // 학과 메뉴 입력
 		MenuViewer.choice.nextLine();
@@ -84,6 +86,7 @@ public class CourseRegistMain {
 	}
 
 	private static void studentMenu() { // 학생 메뉴
+		StudentRegisterManager studnetManager = new StudentRegisterManager();
 		int choice = 0;
 		// 객체 // 학생 CRUD 컨트롤러
 		MenuViewer.studentMenuView(); // 학생 메뉴 출력
@@ -92,15 +95,15 @@ public class CourseRegistMain {
 		switch (choice) {
 		case STUDENT_CHOICE.LIST: // STUDENT_CHOICE의 상수 정수 1
 			System.out.println("");
-			// 학생매니저.목록 // 학생 목록
+			studnetManager.studnetTotalList(); // 학생 목록
 			break;
 		case STUDENT_CHOICE.INSERT: // STUDENT_CHOICE의 상수 정수 2
 			System.out.println("");
-			// 학생매니저.등록 // 학생 등록
+			studnetManager.studnetRegistr(); // 학생 등록
 			break;
 		case STUDENT_CHOICE.UPDATE: // STUDENT_CHOICE의 상수 정수 3
 			System.out.println("");
-			// 학생매니저.수정 // 학생 수정
+			studnetManager.studnetUpdate(); // 학생 수정
 			break;
 		case STUDENT_CHOICE.DELETE: // STUDENT_CHOICE의 상수 정수 4
 			System.out.println("");

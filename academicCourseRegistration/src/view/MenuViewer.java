@@ -11,7 +11,7 @@ public class MenuViewer {
 		System.out.println("미래대학교 수강신청 프로그램");
 		System.out.println("해당 번호를 입력하세요.");
 		System.out.println("1. 학과 목록/입력/수정/삭제");
-		System.out.println("2. 학생 입력/수정/목록");
+		System.out.println("2. 학생 목록/입력/수정/삭제");
 		System.out.println("3. 과목 목록/입력/수정/삭제");
 		System.out.println("4. 수강 목록/신청/취소");
 		System.out.println("5. 프로그램 종료");

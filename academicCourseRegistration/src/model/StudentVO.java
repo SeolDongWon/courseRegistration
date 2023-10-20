@@ -140,9 +140,9 @@ public class StudentVO {
 
 	@Override
 	public String toString() {
-		return "StudentVO [no=" + no + ", sd_num=" + sd_num + ", sd_name=" + sd_name + ", sd_id=" + sd_id
-				+ ", sd_passwd=" + sd_passwd + ", s_num=" + s_num + ", sd_birthday=" + sd_birthday + ", sd_phone="
-				+ sd_phone + ", sd_address=" + sd_address + ", sd_email=" + sd_email + ", sd_date=" + sd_date + "]";
+		return no + "\t" + sd_num + "\t" + sd_name + "\t" + sd_id + "\t" + sd_passwd + "\t" + s_num + "\t\t"
+				+ sd_birthday + "\t" + sd_phone + "\t" + sd_address + "\t\t" + sd_email + "\t\t" + sd_date;
+
 	}
 
 }

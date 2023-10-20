@@ -20,7 +20,7 @@ public class SubjectRegisterManager {
 		String s_name = null; // 학과명
 
 		SubjectDAO sd = new SubjectDAO();
-		SubjectVO svo = new SubjectVO();
+		SubjectVO sbVO = new SubjectVO();
 
 		System.out.println("학과 전체 리스트");
 		sd.getSubjectTotalList();
@@ -29,10 +29,10 @@ public class SubjectRegisterManager {
 		s_num = input.nextLine();
 		System.out.print("학과명>>");
 		s_name = input.nextLine();
-		svo.setS_num(s_num); // 입력한 학과번호와 학과명을 객체에 할당
-		svo.setS_name(s_name);
+		sbVO.setS_num(s_num); // 입력한 학과번호와 학과명을 객체에 할당
+		sbVO.setS_name(s_name);
 		try { // 데이터를 객체에 넣고 객체째 매개변수로 전달
-			sd.setSubjectRegiste(svo); // 입력한 데이터와 쿼리를 DB에 전송하는 메서드
+			sd.setSubjectRegiste(sbVO); // 입력한 데이터와 쿼리를 DB에 전송하는 메서드
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("학과 정보 입력 오류");
@@ -50,7 +50,7 @@ public class SubjectRegisterManager {
 		String s_name = null;
 
 		SubjectDAO sd = new SubjectDAO();
-		SubjectVO svo = new SubjectVO();
+		SubjectVO sbVO = new SubjectVO();
 
 		System.out.printf("\n학과 전체 리스트\n");
 
@@ -64,10 +64,10 @@ public class SubjectRegisterManager {
 		System.out.print("학과명>>");
 		s_name = input.nextLine();
 
-		svo.setNo(s_no);
-		svo.setS_num(s_num);
-		svo.setS_name(s_name);
-		sd.setSubjectUpdate(svo);
+		sbVO.setNo(s_no);
+		sbVO.setS_num(s_num);
+		sbVO.setS_name(s_name);
+		sd.setSubjectUpdate(sbVO);
 
 		System.out.printf("\n학과 전체 리스트\n");
 		sd.getSubjectTotalList();
