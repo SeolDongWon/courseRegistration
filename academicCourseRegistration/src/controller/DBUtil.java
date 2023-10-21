@@ -14,7 +14,7 @@ public class DBUtil {
 		Connection con = null;
 		FileInputStream fis;
 		try {
-			fis = new FileInputStream("src/config/db.properties"); // db.propertis 로드
+			fis = new FileInputStream("academicCourseRegistration/src/config/db.properties"); // db.propertis 로드
 			properties.load(fis);
 
 			String driver = properties.getProperty("driver"); // 드라이버 클래스 경로
@@ -30,7 +30,6 @@ public class DBUtil {
 			System.out.println("FileNotFoundException 오류");
 		} catch (IOException e) {
 			e.printStackTrace();
-			System.out.println("[" + e.toString() + "]");
 			System.out.println("IOException 오류");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
@@ -41,5 +40,9 @@ public class DBUtil {
 		}
 //		System.out.println("DB 연결성공");
 		return con;
+	}
+
+	public static void main(String[] args) {
+		getConnection();
 	}
 }

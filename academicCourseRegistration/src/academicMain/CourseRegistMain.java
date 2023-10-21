@@ -3,6 +3,7 @@ package academicMain;
 import controller.LessonRegisterManager;
 import controller.StudentRegisterManager;
 import controller.SubjectRegisterManager;
+import controller.TraineeRegisterManager;
 import view.LESSON_CHOICE;
 import view.MENU_CHOICE;
 import view.MenuViewer;
@@ -150,22 +151,22 @@ public class CourseRegistMain {
 
 	private static void traineeMenu() { // 수강 메뉴
 		int choice = 0;
-		// 객체 // 수강 CRUD 컨트롤러
+		TraineeRegisterManager traineeManager = new TraineeRegisterManager();// 수강 CRUD 컨트롤러
 		MenuViewer.traineeMenuView(); // 수강 메뉴 출력
 		choice = MenuViewer.choice.nextInt(); // 수강 메뉴 입력
 		MenuViewer.choice.nextLine();
 		switch (choice) {
 		case TRAINEE_CHOICE.LIST: // TRAINEE_CHOICE의 상수 정수 1
 			System.out.println("");
-			// 수강매니저.목록 // 수강 목록
+			traineeManager.traineeList(); // 수강 목록
 			break;
 		case TRAINEE_CHOICE.INSERT: // TRAINEE_CHOICE의 상수 정수 2
 			System.out.println("");
-			// 수강매니저.등록 // 수강 등록
+			traineeManager.traineeRegister(); // 수강 등록
 			break;
-		case TRAINEE_CHOICE.UPDATE: // TRAINEE_CHOICE의 상수 정수 3
+		case TRAINEE_CHOICE.DELETE: // TRAINEE_CHOICE의 상수 정수 3
 			System.out.println("");
-			// 수강매니저.삭제 // 수강 삭제
+			traineeManager.traineeDelete(); // 수강 삭제
 			break;
 		case TRAINEE_CHOICE.MAIN: // TRAINEE_CHOICE의 상수 정수 4
 			return;
